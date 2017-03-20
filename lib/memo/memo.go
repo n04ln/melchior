@@ -15,7 +15,7 @@ func check(e error) {
 		panic(e)
 	}
 }
-func List() []string {
+func list() []string {
 	path, _ := homedir.Expand("~/memo")
 	files, _ := ioutil.ReadDir(path)
 	res := make([]string, len(files))
@@ -26,7 +26,7 @@ func List() []string {
 }
 
 func ViewList() {
-	files := List()
+	files := list()
 	for _, f := range files {
 		fmt.Println(f)
 	}
@@ -38,7 +38,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "<h1> メモ一覧 </h1>")
 	fmt.Fprintln(w, "<hr>")
 	fmt.Fprintln(w, "<ul>")
-	files := List()
+	files := list()
 	for _, f := range files {
 		fp, err := os.Open(home + "/memo/" + f)
 		check(err)
@@ -79,5 +79,5 @@ func Help() {
 	fmt.Println("sub-commands:")
 	fmt.Println("  serve     You can see notes at http://localhost:9595/")
 	fmt.Println("  list      You can see title of all notes")
-
+	
 }
