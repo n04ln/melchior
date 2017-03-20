@@ -79,5 +79,5 @@ func Help() {
 	fmt.Println("sub-commands:")
 	fmt.Println("  serve     You can see notes at http://localhost:9595/")
 	fmt.Println("  list      You can see title of all notes")
-	
+
 }

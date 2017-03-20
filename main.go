@@ -5,9 +5,8 @@ import (
 	"os"
 )
 
-
 func main() {
-	if len(os.Args) ==2 {
+	if len(os.Args) == 2 {
 		switch os.Args[1] {
 		case "list":
 			memo.ViewList()
@@ -18,7 +17,7 @@ func main() {
 		default:
 			memo.Help()
 		}
-	}else {
+	} else {
 		memo.Help()
 	}
 }
