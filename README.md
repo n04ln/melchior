@@ -1,6 +1,7 @@
 # go-memo
 ## What is `go-memo`??
-This application is a notes management application of [memolist.vim](http://github.com/glidenote/memolist.vim)
+This is a notes management application of [memolist.vim](http://github.com/glidenote/memolist.vim)
+
 ## Installation
 ``` bash
 $ go get github.com/NoahOrberg/go-memo
