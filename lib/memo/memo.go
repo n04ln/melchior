@@ -3,11 +3,12 @@ package memo
 import (
 	"bufio"
 	"fmt"
-	"github.com/mitchellh/go-homedir"
-	"github.com/russross/blackfriday"
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	"github.com/mitchellh/go-homedir"
+	"github.com/russross/blackfriday"
 )
 
 func check(e error) {
@@ -25,6 +26,7 @@ func list() []string {
 	return res
 }
 
+// ViewList : show list
 func ViewList() {
 	files := list()
 	for _, f := range files {
@@ -67,17 +69,19 @@ func detailsHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// Serve : service of html
 func Serve() {
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/list/", detailsHandler)
-	fmt.Println("See http://localhost:9595/")
 	http.ListenAndServe(":9595", nil)
+	fmt.Println("See http://localhost:9595/")
 }
 
+// Help : show help
 func Help() {
 	fmt.Println("usage: go-memo [sub-command]")
 	fmt.Println("sub-commands:")
 	fmt.Println("  serve     You can see notes at http://localhost:9595/")
 	fmt.Println("  list      You can see title of all notes")
-	
+
 }
