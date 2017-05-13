@@ -6,32 +6,38 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"regexp"
 
 	"github.com/mitchellh/go-homedir"
 	"github.com/russross/blackfriday"
 )
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-func list() []string {
+func list() ([]string, error) {
+	var res []string
 	path, _ := homedir.Expand("~/memo")
 	files, _ := ioutil.ReadDir(path)
-	res := make([]string, len(files))
-	for i := 0; i < len(files); i++ {
-		res[i] = files[i].Name()
+	for _, file := range files {
+		isDotFile, err := regexp.MatchString(`^\..*$`, file.Name())
+		if err != nil {
+			return []string{}, nil
+		}
+		if !isDotFile {
+			res = append(res, file.Name())
+		}
 	}
-	return res
+	return res, nil
 }
 
 // ViewList : show list
-func ViewList() {
-	files := list()
+func ViewList() error {
+	files, err := list()
+	if err != nil{
+		return err
+	}
 	for _, f := range files {
 		fmt.Println(f)
 	}
+	return nil
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -40,10 +46,17 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "<h1> メモ一覧 </h1>")
 	fmt.Fprintln(w, "<hr>")
 	fmt.Fprintln(w, "<ul>")
-	files := list()
+	files, err := list()
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
 	for _, f := range files {
 		fp, err := os.Open(home + "/memo/" + f)
-		check(err)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
 		scanner := bufio.NewScanner(fp)
 		scanner.Scan()
 		title := scanner.Text()[7:]
@@ -61,7 +74,10 @@ func detailsHandler(w http.ResponseWriter, r *http.Request) {
 	filename := r.URL.Path[6:] // URI is (http://localhost:XXXX/list/<filename>)
 	home, _ := homedir.Expand("~/")
 	md, err := ioutil.ReadFile(home + "/memo/" + filename)
-	check(err)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
 	output := blackfriday.MarkdownCommon([]byte(md))
 	fmt.Fprintln(w, string(output))
 	fmt.Fprintln(w, "<hr>")
@@ -71,10 +87,10 @@ func detailsHandler(w http.ResponseWriter, r *http.Request) {
 
 // Serve : service of html
 func Serve() {
+	fmt.Println("See http://localhost:9595/")
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/list/", detailsHandler)
 	http.ListenAndServe(":9595", nil)
-	fmt.Println("See http://localhost:9595/")
 }
 
 // Help : show help
