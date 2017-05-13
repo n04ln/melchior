@@ -1,3 +1,4 @@
-package: memo
+package: github.com/NoahOrberg/go-memo
 import:
 - package: github.com/mitchellh/go-homedir
+- package: github.com/russross/blackfriday

@@ -1,6 +1,10 @@
 hash: c6b9f21546390ffd9283b6e4394b71c187ac404301000f2632f716aead4a6eed
-updated: 2017-03-18T23:05:18.109167885+09:00
+updated: 2017-05-14T01:37:08.321645141+09:00
 imports:
 - name: github.com/mitchellh/go-homedir
   version: b8bc1bf767474819792c23f32d8286a45736f1c6
+- name: github.com/russross/blackfriday
+  version: 0ba0f2b6ed7c475a92e4df8641825cb7a11d1fa3
+- name: github.com/shurcooL/sanitized_anchor_name
+  version: 79c90efaf01eddc01945af5bc1797859189b830b
 testImports: []
