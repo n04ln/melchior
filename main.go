@@ -14,6 +14,8 @@ func main() {
 			memo.Serve()
 		case "help":
 			memo.Help()
+		case "add":
+			memo.Add()
 		default:
 			memo.Help()
 		}

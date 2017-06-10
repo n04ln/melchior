@@ -1,0 +1,45 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;go-memo&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../cellar" />
+      <root url="file://$PROJECT_DIR$/../../../test" />
+      <root url="file://$PROJECT_DIR$/../../../log" />
+      <root url="file://$PROJECT_DIR$/../../../chatapp" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../mymath" />
+      <root url="file://$PROJECT_DIR$/../../../proj_test" />
+      <root url="file://$PROJECT_DIR$/../../../proj_endu" />
+      <root url="file://$PROJECT_DIR$/../../../sample" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../codeiq" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../web" />
+      <root url="file://$PROJECT_DIR$/../../../mathapp" />
+      <root url="file://$PROJECT_DIR$/../../../md2html" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../kanojo" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../cellar" />
+      <root url="file://$PROJECT_DIR$/../../../test" />
+      <root url="file://$PROJECT_DIR$/../../../log" />
+      <root url="file://$PROJECT_DIR$/../../../chatapp" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../mymath" />
+      <root url="file://$PROJECT_DIR$/../../../proj_test" />
+      <root url="file://$PROJECT_DIR$/../../../proj_endu" />
+      <root url="file://$PROJECT_DIR$/../../../sample" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../codeiq" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../web" />
+      <root url="file://$PROJECT_DIR$/../../../mathapp" />
+      <root url="file://$PROJECT_DIR$/../../../md2html" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../kanojo" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
