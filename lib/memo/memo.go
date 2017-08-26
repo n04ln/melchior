@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"os/exec"
 	"regexp"
+	"log"
 
 	"github.com/mitchellh/go-homedir"
 )
@@ -44,13 +44,9 @@ func Serve() {
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/list/", detailsHandler)
 	http.HandleFunc("/style.css", cssHandler)
-	http.ListenAndServe(":9595", nil)
-}
-
-func Add() {
-	cmd := exec.Command("nvim")
-	cmd.Start()
-	cmd.Wait()
+	if err := http.ListenAndServe(":9595", nil); err != nil {
+		log.Fatal(err)
+	}
 }
 
 // Help : show help
