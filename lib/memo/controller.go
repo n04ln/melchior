@@ -7,9 +7,10 @@ import (
 	"net/http"
 	"os"
 
+	"log"
+
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/russross/blackfriday"
-	"log"
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -49,7 +50,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func cssHandler(w http.ResponseWriter, r *http.Request) {
-	data, err := ioutil.ReadFile(os.Getenv("GOPATH")+"/src/github.com/NoahOrberg/go-memo/css/style.css")
+	data, err := ioutil.ReadFile(os.Getenv("GOPATH") + "/src/github.com/NoahOrberg/melchior/css/style.css")
 	if err != nil {
 		log.Print(err)
 		w.WriteHeader(http.StatusInternalServerError)

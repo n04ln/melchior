@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/NoahOrberg/go-memo/lib/memo"
 	"os"
+
+	"github.com/NoahOrberg/melchior/lib/memo"
 )
 
 func main() {

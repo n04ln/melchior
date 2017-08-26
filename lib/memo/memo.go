@@ -3,9 +3,9 @@ package memo
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"regexp"
-	"log"
 
 	"github.com/mitchellh/go-homedir"
 )
@@ -51,10 +51,9 @@ func Serve() {
 
 // Help : show help
 func Help() {
-	fmt.Println("usage: go-memo [sub-command]")
+	fmt.Println("usage: melchior [sub-command]")
 	fmt.Println("sub-commands:")
 	fmt.Println("  serve     You can see notes at http://localhost:9595/")
 	fmt.Println("  list      You can see title of all notes")
 
 }
-
