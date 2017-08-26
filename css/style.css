@@ -1,0 +1,15 @@
+body {
+    background-color: #6666FF;
+}
+
+ul, ol {
+    background: #fcfcfc;
+    padding: 0.5em 0.5em 0.5em 2em;
+    border: solid 3px gray;
+}
+
+ul li, ol li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+}
+

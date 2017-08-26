@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.8.3/libexec" />
   <component name="HaskellBuildOptions">
     <ghcPath>/usr/local/bin/ghc</ghcPath>
     <cabalPath>$USER_HOME$/.local/bin/cabal</cabalPath>
     <stackPath>/usr/local/bin/stack</stackPath>
-  </component>
-  <component name="ProjectRootManager" version="2" default="true">
-    <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SbtLocalSettings">
     <option name="modificationStamps">

@@ -43,6 +43,7 @@ func Serve() {
 	fmt.Println("See http://localhost:9595/")
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/list/", detailsHandler)
+	http.HandleFunc("/style.css", cssHandler)
 	http.ListenAndServe(":9595", nil)
 }
 
