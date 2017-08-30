@@ -1,10 +1,10 @@
 body {
-    background-color: #6170b6;
-    color: #cccccc;
+    background-color: #ffffff;
+    color: #111111;
 }
 
 ul, ol {
-    background: #6170b6;
+    background: #ffffff;
     padding: 0.5em 0.5em 0.5em 2em;
     border: outset 1px #ffffff;
 }
@@ -15,28 +15,28 @@ ul li, ol li {
 }
 
 h1 {
-    padding: 0 .5em;
+    padding: .25em 0 .5em .75em;
     border-left: 6px solid #ccc;
-    border-bottom: 1px dashed #f5f4cd;
-    color: #f5f4cd;
+    border-bottom: 1px dashed #000000;
+    color: #000000;
 }
 
 h2 {
     padding: .25em 0 .5em .75em;
-    border-left: 6px solid #f5f4cd;
-    border-bottom: 1px solid #f5f4cd;
+    border-left: 6px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
 h3 {
-    padding: .25em 0 .5em .75em;
-    border-left: 6px solid #f5f4cd;
-    border-bottom: 1px solid #f5f4cd;
+    padding: 0 .5em;
+    border-left: 6px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
 h4 {
-    padding: .25em 0 .5em .75em;
-    border-left: 6px solid #f5f4cd;
-    border-bottom: 1px solid #f5f4cd;
+    padding: 0 .5em;
+    border-left: 6px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
 a {
